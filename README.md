@@ -4,6 +4,8 @@
 
 Moman Interpret là một ứng dụng AI thông minh được thiết kế để giúp hiểu rõ hơn về ngôn ngữ và ý nghĩa tiềm ẩn trong giao tiếp của phụ nữ. Ứng dụng sử dụng các model AI tiên tiến (OpenAI, Anthropic Claude, Google Gemini) kết hợp với hiểu biết về tâm lý học và giao tiếp để phân tích và giải mã các câu nói một cách chuyên sâu.
 
+![Moman Interpret](./public/woman-explain.jpg)
+
 Bản quyền thuộc về team [Học Code AI](https://hoccodeai.com).
 
 Bạn có thể sử dụng bản online tại [Thấu hiểu phụ nữ Online](https://hoccodeai.com/tools/thau-hieu-phu-nu).
