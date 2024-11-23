@@ -4,8 +4,7 @@ import "@/styles/globals.css";
 import ModelType from "@/components/ModelType.astro";
 import Footer from "@/components/Footer.astro";
 
-import Completion from "@/pages/_Completion";
-import Chat from "@/pages/_Chat";
+import MomanInterpret from "@/pages/_MomanInterpret";
 ---
 
 <html lang="en">
@@ -19,10 +18,8 @@ import Chat from "@/pages/_Chat";
   <body class="flex flex-col min-h-[60vh]">
     <ModelType />
 
-    <div class="flex-grow">
-      <!-- <Completion client:load /> -->
-
-      <Chat client:load />
+    <div class="flex-grow pt-10">
+      <MomanInterpret client:load />
     </div>
 
     <Footer />

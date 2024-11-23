@@ -1,27 +1,30 @@
-# AI App Boilerplate
+# Moman Interpret - AI Giải Mã Ngôn Ngữ Phụ Nữ
 
 ## Giới thiệu
 
-Đây là một boilerplate để xây dựng ứng dụng AI với giao diện chat hoặc completion, hỗ trợ nhiều model AI khác nhau như OpenAI, Anthropic Claude và Google Gemini.
+Moman Interpret là một ứng dụng AI thông minh được thiết kế để giúp hiểu rõ hơn về ngôn ngữ và ý nghĩa tiềm ẩn trong giao tiếp của phụ nữ. Ứng dụng sử dụng các model AI tiên tiến (OpenAI, Anthropic Claude, Google Gemini) kết hợp với hiểu biết về tâm lý học và giao tiếp để phân tích và giải mã các câu nói một cách chuyên sâu.
 
 Bản quyền thuộc về team [Học Code AI](https://hoccodeai.com).
 
+Bạn có thể sử dụng bản online tại [Thấu hiểu phụ nữ Online](https://hoccodeai.com/tools/thau-hieu-phu-nu).
+
 ## Tính năng chính
 
-- 💬 Giao diện chat để tương tác với AI
-- ✨ Chế độ completion cho phản hồi một lần
-- 🎨 Giao diện đẹp mắt sử dụng shadcn/ui
-- 🚀 Xây dựng bằng Astro cho hiệu suất tối ưu
-- 📱 Thiết kế responsive
-- 🔒 Xử lý API endpoint an toàn cho tương tác AI
-
+- 🧠 Phân tích ngữ cảnh và ý nghĩa tiềm ẩn trong lời nói
+- 💡 Giải thích chi tiết từ nhiều góc độ (nghĩa đen, suy nghĩ tiềm ẩn, ý nghĩa thực sự)
+- 📊 Đánh giá mức độ tin cậy của phân tích
+- 🎯 Tích hợp bối cảnh để tăng độ chính xác
+- ✨ Giao diện người dùng thân thiện và trực quan
+- 🚀 Phản hồi nhanh chóng và chi tiết
 
 ## Huớng dẫn cài đặt và sử dụng
 
+### 1. Cài đặt
+
 1. Clone repository về máy:
 ```bash
-git clone https://github.com/hoccodeai/ai-app-boilerplate.git
-cd ai-app-boilerplate
+git clone https://github.com/conanak99/translaher
+cd translaher
 ```
 
 2. Cài đặt dependencies:
@@ -57,128 +60,18 @@ npm run dev
 yarn dev
 ```
 
-## Cách sử dụng
+### 2. Cách sử dụng
 
-### 1. Chọn chế độ tương tác
-
-Ứng dụng có 2 chế độ chính:
-
-- **Chat Mode**: Cho phép chat nhiều lượt qua lại với AI:
-
-    Tính năng:
-
-    - Hội thoại nhiều lượt
-    - Lưu trữ lịch sử chat
-    - Tương tác phức tạp cần ngữ cảnh từ các tin nhắn trước
-    - Hỗ trợ markdown phong phú với code syntax highlight
-
-    Phù hợp cho:
-    - Tương tác, thảo luận mở rộng
-    - Giải thích phức tạp cần trao đổi qua lại
-    - Bất kỳ tình huống nào cần ngữ cảnh từ các tin nhắn trước
-
-
-- **Completion Mode**: Cho tương tác đơn lẻ một câu hỏi - một câu trả lời:
-
-    Tính năng:
-
-    - Tương tác một lượt (một câu hỏi, một câu trả lời)
-    - Kịch bản hỏi đáp đơn giản
-    - Không cần lưu trữ lịch sử hội thoại
-    - Câu trả lời ngắn gọn, tập trung
-
-    Phù hợp cho:
-
-    - Truy vấn nhanh
-    - Yêu cầu dịch thuật
-    - Giải thích đơn giản
-
-### 2. Kích hoạt chế độ
-
-Trong file `src/pages/index.astro`, bỏ comment component tương ứng với chế độ bạn muốn sử dụng:
-
-```tsx
-<!-- Cho Chat Mode -->
-<Chat client:load />
-
-<!-- Cho Completion Mode -->
-<Completion client:load />
-```
-
-### 3. Cấu hình Model AI
-
-Ứng dụng tự động chọn model AI dựa trên API key có trong file `.env`. Thứ tự ưu tiên:
-
-1. OpenAI (GPT-4o)
-2. Anthropic (Claude)
-3. Google (Gemini)
-
-Bạn có thể xem và điều chỉnh cấu hình model trong file `src/lib/ai-model.ts`:
-
-## Cấu trúc code - Customize ứng dụng
-
-### Cấu trúc thư mục
-
-```bash
-src/
-├── assets/                # Chứa ảnh và static assets
-├── components/          # React/Astro components
-│   └── ui/               # UI components từ shadcn/ui
-├── lib/                  # Utilities và shared logic
-├── pages/                # Các trang và API routes
-│   ├── api/              # API endpoints
-│   ├── _Chat.tsx         # Component chat mode
-│   └── _Completion.tsx   # Component completion mode
-└── styles/                # CSS và style definitions
-```
-
-### UI Components
-
-1. **Chat Mode** (`src/pages/_Chat.tsx`):
-   - Component xử lý chat nhiều lượt
-   - Sử dụng `useChat` hook từ Vercel AI SDK
-   - Hỗ trợ markdown và code highlighting
-
-2. **Completion Mode** (`src/pages/_Completion.tsx`):
-   - Component xử lý completion đơn lẻ
-   - Sử dụng `useCompletion` hook từ Vercel AI SDK
-   - UI đơn giản hơn cho tương tác một lượt
-
-### API Endpoints
-
-1. **Chat API** (`src/pages/api/chat.ts`):
-   - Xử lý streaming chat responses
-   - Thêm context hoặc system prompts
-
-2. **Completion API** (`src/pages/api/completion.ts`):
-   - Xử lý single-turn completions
-   - Tùy chỉnh prompt templates
-
-> Bạn có thể tạo thêm component/endpoint hoặc edit các component hiện tại để thêm chức năng!
-
-### Customize AI Models
-
-File `src/lib/ai-model.ts` chứa logic khởi tạo và cấu hình AI models:
-
-1. **Thêm model mới**:
-```typescript
-if (newModelApiKey) {
-  const newModel = createNewModel({
-    apiKey: newModelApiKey,
-    // Cấu hình khác
-  });
-  return newModel("model-id");
-}
-```
-
-2. **Tùy chỉnh model settings**:
-```typescript
-return model("model-id", {
-  temperature: 0.7,
-  maxTokens: 1000,
-  // Các settings khác
-});
-```
+1. Nhập bối cảnh của cuộc hội thoại (nếu có)
+2. Nhập câu nói cần được phân tích
+3. Nhấn "Giải mã ngôn ngữ phụ nữ"
+4. Nhận kết quả phân tích chi tiết bao gồm:
+   - Phân tích ngữ cảnh
+   - Nghĩa đen của câu nói
+   - Suy nghĩ tiềm ẩn
+   - Ý nghĩa thực sự
+   - Giải thích thêm
+   - Mức độ tin cậy của phân tích
 
 ## Công nghệ sử dụng
 
